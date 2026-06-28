@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oferte | Evadari in natura pentru familie</title>
+    <!-- Font for a warm, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fcf9f5;
+            color: #2e2c28;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            display: inline-block;
+            background: #2a6b4a;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 16px 44px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.15s ease;
+            box-shadow: 0 8px 24px rgba(42, 107, 74, 0.30);
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary:hover {
+            background: #1f543a;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(42, 107, 74, 0.40);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            padding: 18px 0;
+            background: #ffffffcc;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e8e0d6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: #2a6b4a;
+            letter-spacing: -0.3px;
+        }
+
+        .logo span {
+            font-weight: 400;
+            color: #6b5e4e;
+        }
+
+        .header-cta {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #2a6b4a;
+            border: 2px solid #2a6b4a;
+            padding: 8px 22px;
+            border-radius: 50px;
+            transition: 0.2s;
+        }
+
+        .header-cta:hover {
+            background: #2a6b4a;
+            color: #fff;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 60px 0 70px;
+            background: linear-gradient(135deg, #f7efe8 0%, #e8dfd5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: #1f2c24;
+            margin-bottom: 18px;
+        }
+
+        .hero-content h1 em {
+            font-style: italic;
+            color: #2a6b4a;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #3f3a33;
+            margin-bottom: 28px;
+            max-width: 480px;
+        }
+
+        .hero-content .highlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+            color: #4d453c;
+        }
+
+        .hero-content .highlight i {
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .hero-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            padding: 70px 0 50px;
+            background: #ffffff;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: #1f2c24;
+            margin-bottom: 12px;
+        }
+
+        .features .subtitle {
+            text-align: center;
+            color: #5e5548;
+            font-size: 1.05rem;
+            margin-bottom: 48px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 28px 16px;
+            background: #f9f5f0;
+            border-radius: 20px;
+            transition: 0.2s;
+        }
+
+        .feature-card:hover {
+            background: #f2ebe2;
+        }
+
+        .feature-card .icon {
+            font-size: 2.6rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1f2c24;
+            margin-bottom: 6px;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #5e5548;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            padding: 60px 0 70px;
+            background: #f7f2eb;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1f2c24;
+            margin-bottom: 10px;
+        }
+
+        .gallery .subtitle {
+            text-align: center;
+            color: #5e5548;
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-grid .gallery-item {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            transition: 0.25s ease;
+        }
+
+        .gallery-grid .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item .caption {
+            padding: 12px 14px;
+            background: #fff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2e2c28;
+            text-align: center;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            padding: 70px 0 80px;
+            background: linear-gradient(145deg, #2a6b4a 0%, #1e4f36 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .cta-final p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-final .btn-primary {
+            background: #f5c542;
+            color: #1f2c24;
+            box-shadow: 0 8px 24px rgba(245, 197, 66, 0.35);
+        }
+
+        .cta-final .btn-primary:hover {
+            background: #e6b834;
+            box-shadow: 0 12px 32px rgba(245, 197, 66, 0.50);
+        }
+
+        .cta-final .small-note {
+            margin-top: 18px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            padding: 30px 0;
+            background: #1c1a17;
+            color: #a69b8e;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .site-footer a {
+            color: #c9bdb0;
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero-image img {
+                height: 300px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 40px 0 50px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-content .highlight {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .hero-image img {
+                height: 220px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .gallery-grid img {
+                height: 160px;
+            }
+
+            .cta-final h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn-primary {
+                padding: 14px 32px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .header-cta {
+                font-size: 0.8rem;
+                padding: 6px 16px;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======= HEADER ======= -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">🌲 Cabane<span> în Bulgaria - oferta 2026</span></div>
+            <a href="#rezerva" class="header-cta">Rezervă acum</a>
+        </div>
+    </header>
+
+    <!-- ======= HERO ======= -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>
+                    Evadari în natură,<br />
+                    la <em>15 km de mare</em>
+                </h1>
+                <p>
+                    5 cabane din lemn, cu 2 dormitoare, bucătărie complet utilată
+                    și liniștea dealurilor. Perfect pentru familii și cupluri
+                    care caută relaxare si liniste in natura.
+                </p>
+                <div class="highlight">
+                    <span>🏡 5 cabane private</span>
+                    <span>🛏️ 2 dormitoare fiecare</span>
+                    <span>🍳 Bucătărie + baie proprie</span>
+                    <span>🌿 Regiune deluroasă, aer curat</span>
+                    <span>🌿 Marea la 20 de minute de condus.</span>
+                </div>
+                <a href="#rezerva" class="btn-primary">Vezi disponibilitatea</a>
+            </div>
+            <div class="hero-image">
+                <!-- Proprietary photo: wooden cabin exterior in nature -->
+                <img
+                src="lionforest01.jpg?w=800&auto=format&fit=crop"
+                alt="Cabane din lemn în mijlocul naturii, Bulgaria"
+                loading="lazy"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FEATURES ======= -->
+    <section class="features">
+        <div class="container">
+            <h2>De ce să alegi această destinație?</h2>
+            <p class="subtitle">
+                Tot ce ai nevoie pentru o vacanță relaxantă, departe de agitație.
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="icon">🏠</span>
+                    <h3>5 cabane identice</h3>
+                    <p>Fiecare cu 2 dormitoare, living, bucătărie și baie proprie. Intimitate totală.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">👨‍👩‍👧‍👦</span>
+                    <h3>Orientat către familie</h3>
+                    <p>Spațiu generos pentru copii, curte îngrijită și liniște pentru părinți.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🌊</span>
+                    <h3>La 15 mile de mare</h3>
+                    <p>Suficient de aproape pentru o escapadă la plajă, dar destul de departe pentru aer curat.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🔥</span>
+                    <h3>Autentic & confortabil</h3>
+                    <p>Construcție din lemn, interioare moderne, dar cu căldura casei de la țară.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= GALLERY ======= -->
+    <section class="gallery">
+        <div class="container">
+            <h2>Privire în interior</h2>
+            <p class="subtitle">Cum arată cabanele — confort, lemn și lumină.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img
+                    src="lionforest11.jpeg?w=600&auto=format&fit=crop"
+                    alt="Living interior cu canapea și lemn"
+                    loading="lazy"
+                    />
+                    <div class="caption">Living spațios</div>
+                </div>
+                <div class="gallery-item">
+                    <img
+                    src="lionforest12.jpg?w=600&auto=format&fit=crop"
+                    alt="Bucătărie modernă utilată complet"
+                    loading="lazy"
+                    />
+                    <div class="caption">Bucătărie complet utilată</div>
+                </div>
+                <div class="gallery-item">
+                    <img
+                    src="lionforest13.jpg?w=600&auto=format&fit=crop"
+                    alt="Dormitor dublu cu vedere la natură"
+                    loading="lazy"
+                    />
+                    <div class="caption">Dormitor principal</div>
+                </div>
+                <div class="gallery-item">
+                    <img
+                    src="lionforest14.jpg?w=600&auto=format&fit=crop"
+                    alt="Vedere exterioară a cabanelor pe deal"
+                    loading="lazy"
+                    />
+                    <div class="caption">Peisajul din jur</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FINAL CTA ======= -->
+    <section class="cta-final" id="rezerva">
+        <div class="container">
+            <h2>Verifică disponibilitatea</h2>
+            <p>
+                Intră direct pe platforma de rezervări a cabanelor. Vezi prețurile,
+                alege datele și bucură-te de o vacanță autentică în Bulgaria.
+            </p>
+            <!-- 
+                ⚠️ IMPORTANT: Replace the href below with the ACTUAL booking page URL 
+                provided by the Bulgarian property owner. Keep the ?ref=RO_PARTNER 
+                parameter so they can track your referrals.
+            -->
+            <a
+            href="https://platforma-lor-booking.com/rezerva?ref=RO_PARTNER"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            ➡️ Mergi la rezervare
+        </a>
+        <p class="small-note">
+            Vei fi redirecționat către site-ul partenerului nostru din Bulgaria.
+            Rezervarea se face direct cu ei.
+        </p>
+    </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="site-footer">
+    <div class="container">
+        <p>
+            &copy; 2026 — Proiect turistic pentru familii românești.
+            Imagini cu rol ilustrativ.
+        </p>
+    </div>
+</footer>
+
+<!-- ======= SMOOTH SCROLL (optional) ======= -->
+<script>
+    (function() {
+        // Smooth scroll for internal anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    })();
+</script>
+
+</body>
+</html>
