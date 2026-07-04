@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oferte | Evadari in natura pentru familie</title>
-    <!-- Font for a warm, modern look -->
+    <title>Evadari.ro — Destinații excepționale în Balcani</title>
+    <meta name="description" content="Descoperă cele mai frumoase locuri de evadare în Balcani — cabane, case de oaspeți și retreaturi de vis pentru familie și cupluri." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
     <style>
         /* ===== RESET & BASE ===== */
         *,
@@ -27,10 +27,18 @@
             background: #fcf9f5;
             color: #2e2c28;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         a {
             text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
         }
 
         .container {
@@ -39,20 +47,62 @@
             padding: 0 24px;
         }
 
+        .section-padding {
+            padding: 70px 0;
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #2a6b4a;
+            background: #e9f3ec;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1f2c24;
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: #5e5548;
+            max-width: 600px;
+            margin-bottom: 48px;
+            line-height: 1.5;
+        }
+
+        .section-title.centered,
+        .section-subtitle.centered {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* ===== BUTTONS ===== */
         .btn-primary {
             display: inline-block;
             background: #2a6b4a;
             color: #fff;
             font-weight: 700;
-            font-size: 1.1rem;
-            padding: 16px 44px;
+            font-size: 1.05rem;
+            padding: 15px 40px;
             border-radius: 50px;
             border: none;
             cursor: pointer;
-            transition: background 0.25s ease, transform 0.15s ease;
-            box-shadow: 0 8px 24px rgba(42, 107, 74, 0.30);
+            transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+            box-shadow: 0 8px 24px rgba(42, 107, 74, 0.28);
             letter-spacing: 0.3px;
+            text-align: center;
         }
 
         .btn-primary:hover {
@@ -65,11 +115,54 @@
             transform: translateY(0);
         }
 
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: #2a6b4a;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 28px;
+            border-radius: 50px;
+            border: 2px solid #2a6b4a;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-outline:hover {
+            background: #2a6b4a;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(42, 107, 74, 0.22);
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: #f5c542;
+            color: #1f2c24;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 24px rgba(245, 197, 66, 0.35);
+            letter-spacing: 0.3px;
+        }
+
+        .btn-gold:hover {
+            background: #e6b834;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(245, 197, 66, 0.50);
+        }
+
         /* ===== HEADER ===== */
         .site-header {
-            padding: 18px 0;
+            padding: 16px 0;
             background: #ffffffcc;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid #e8e0d6;
             position: sticky;
             top: 0;
@@ -85,25 +178,54 @@
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.35rem;
+            font-weight: 800;
+            font-size: 1.3rem;
             color: #2a6b4a;
             letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            font-size: 1.5rem;
         }
 
         .logo span {
             font-weight: 400;
             color: #6b5e4e;
+            font-size: 0.85rem;
+            letter-spacing: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-nav a {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #4d453c;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+
+        .header-nav a:hover {
+            color: #2a6b4a;
         }
 
         .header-cta {
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #2a6b4a;
             border: 2px solid #2a6b4a;
-            padding: 8px 22px;
+            padding: 8px 20px;
             border-radius: 50px;
             transition: 0.2s;
+            white-space: nowrap;
         }
 
         .header-cta:hover {
@@ -113,221 +235,410 @@
 
         /* ===== HERO ===== */
         .hero {
-            padding: 60px 0 70px;
-            background: linear-gradient(135deg, #f7efe8 0%, #e8dfd5 100%);
+            padding: 50px 0 70px;
+            background: linear-gradient(160deg, #f7efe8 0%, #ebe0d5 30%, #e0d7cb 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .hero-grid {
+        .hero-inner {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
         }
 
-        .hero-content h1 {
-            font-size: 2.8rem;
+        .hero-content .hero-badge {
+            display: inline-block;
+            font-size: 0.8rem;
             font-weight: 700;
-            line-height: 1.15;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #2a6b4a;
+            background: #ffffffaa;
+            backdrop-filter: blur(4px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.9rem;
+            font-weight: 800;
+            line-height: 1.12;
             color: #1f2c24;
             margin-bottom: 18px;
+            letter-spacing: -0.5px;
         }
 
         .hero-content h1 em {
             font-style: italic;
             color: #2a6b4a;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .hero-content p {
             font-size: 1.15rem;
             color: #3f3a33;
-            margin-bottom: 28px;
+            margin-bottom: 16px;
             max-width: 480px;
+            line-height: 1.55;
         }
 
-        .hero-content .highlight {
+        .hero-stats {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px 40px;
-            margin-bottom: 32px;
-            font-size: 0.95rem;
+            gap: 20px 36px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
             color: #4d453c;
         }
 
-        .hero-content .highlight i {
-            display: inline-block;
-            margin-right: 6px;
+        .hero-stats span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
         }
 
-        .hero-image {
+        .hero-stats .stat-number {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: #2a6b4a;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-image-wrapper {
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+            position: relative;
+            aspect-ratio: 4 / 3;
         }
 
-        .hero-image img {
+        .hero-image-wrapper img {
             width: 100%;
-            height: 380px;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
 
-        /* ===== FEATURES ===== */
-        .features {
-            padding: 70px 0 50px;
+        .hero-image-wrapper .img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.25));
+            pointer-events: none;
+        }
+
+        /* ===== DESTINATION GRID ===== */
+        .destinations-section {
             background: #ffffff;
         }
 
-        .features h2 {
-            text-align: center;
-            font-size: 2.1rem;
-            font-weight: 600;
-            color: #1f2c24;
-            margin-bottom: 12px;
-        }
-
-        .features .subtitle {
-            text-align: center;
-            color: #5e5548;
-            font-size: 1.05rem;
-            margin-bottom: 48px;
-        }
-
-        .features-grid {
+        .destinations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
-        .feature-card {
+        .destination-card {
+            background: #f9f5f0;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .destination-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+        }
+
+        .destination-card .card-img {
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            position: relative;
+            background: #e8dfd5;
+        }
+
+        .destination-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .destination-card:hover .card-img img {
+            transform: scale(1.06);
+        }
+
+        .destination-card .card-img .country-flag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            z-index: 2;
+        }
+
+        .destination-card .card-img .card-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #2a6b4a;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 12px;
+            border-radius: 50px;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: all 0.3s ease;
+        }
+
+        .destination-card:hover .card-badge {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .destination-card .card-body {
+            padding: 16px 18px 18px;
+        }
+
+        .destination-card .card-body h3 {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #1f2c24;
+            margin-bottom: 4px;
+            letter-spacing: -0.2px;
+        }
+
+        .destination-card .card-body p {
+            font-size: 0.85rem;
+            color: #6b5e4e;
+            line-height: 1.4;
+        }
+
+        .destination-card .card-body .card-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #2a6b4a;
+            transition: color 0.2s;
+        }
+
+        .destination-card:hover .card-link {
+            color: #1f543a;
+        }
+
+        /* ===== FEATURED PROPERTIES ===== */
+        .featured-section {
+            background: #f7f2eb;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .featured-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
+        }
+
+        .featured-card .featured-img {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .featured-card .featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .featured-card:hover .featured-img img {
+            transform: scale(1.04);
+        }
+
+        .featured-card .featured-img .featured-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: #f5c542;
+            color: #1f2c24;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 7px 16px;
+            border-radius: 50px;
+            z-index: 2;
+        }
+
+        .featured-card .featured-body {
+            padding: 22px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .featured-card .featured-body .location {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #2a6b4a;
+        }
+
+        .featured-card .featured-body h3 {
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: #1f2c24;
+            letter-spacing: -0.3px;
+        }
+
+        .featured-card .featured-body p {
+            font-size: 0.95rem;
+            color: #5e5548;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .featured-card .featured-body .featured-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .featured-card .featured-body .tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 50px;
+            background: #f2ebe2;
+            color: #4d453c;
+        }
+
+        /* ===== WHY BALKANS ===== */
+        .why-section {
+            background: #ffffff;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 28px;
+        }
+
+        .why-card {
             text-align: center;
-            padding: 28px 16px;
+            padding: 32px 18px;
             background: #f9f5f0;
             border-radius: 20px;
-            transition: 0.2s;
+            transition: background 0.25s ease;
         }
 
-        .feature-card:hover {
+        .why-card:hover {
             background: #f2ebe2;
         }
 
-        .feature-card .icon {
+        .why-card .why-icon {
             font-size: 2.6rem;
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
-        .feature-card h3 {
+        .why-card h3 {
             font-weight: 600;
             font-size: 1.1rem;
             color: #1f2c24;
             margin-bottom: 6px;
         }
 
-        .feature-card p {
-            font-size: 0.92rem;
-            color: #5e5548;
-        }
-
-        /* ===== GALLERY ===== */
-        .gallery {
-            padding: 60px 0 70px;
-            background: #f7f2eb;
-        }
-
-        .gallery h2 {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 600;
-            color: #1f2c24;
-            margin-bottom: 10px;
-        }
-
-        .gallery .subtitle {
-            text-align: center;
-            color: #5e5548;
-            margin-bottom: 40px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .gallery-grid .gallery-item {
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-            transition: 0.25s ease;
-        }
-
-        .gallery-grid .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-item .caption {
-            padding: 12px 14px;
-            background: #fff;
+        .why-card p {
             font-size: 0.9rem;
-            font-weight: 500;
-            color: #2e2c28;
-            text-align: center;
+            color: #5e5548;
+            line-height: 1.5;
         }
 
-        /* ===== CTA FINAL ===== */
-        .cta-final {
-            padding: 70px 0 80px;
+        /* ===== NEWSLETTER CTA ===== */
+        .newsletter-section {
             background: linear-gradient(145deg, #2a6b4a 0%, #1e4f36 100%);
             color: #fff;
             text-align: center;
         }
 
-        .cta-final h2 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 12px;
+        .newsletter-section .section-title {
+            color: #fff;
         }
 
-        .cta-final p {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            margin-bottom: 32px;
-            max-width: 560px;
+        .newsletter-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.85);
             margin-left: auto;
             margin-right: auto;
         }
 
-        .cta-final .btn-primary {
-            background: #f5c542;
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 480px;
+            margin: 0 auto 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1 1 260px;
+            padding: 14px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            background: #fff;
             color: #1f2c24;
-            box-shadow: 0 8px 24px rgba(245, 197, 66, 0.35);
         }
 
-        .cta-final .btn-primary:hover {
-            background: #e6b834;
-            box-shadow: 0 12px 32px rgba(245, 197, 66, 0.50);
+        .newsletter-form input::placeholder {
+            color: #a69b8e;
         }
 
-        .cta-final .small-note {
-            margin-top: 18px;
-            font-size: 0.85rem;
+        .newsletter-form .btn-gold {
+            flex-shrink: 0;
+            padding: 14px 32px;
+            font-size: 0.95rem;
+        }
+
+        .small-note {
+            font-size: 0.8rem;
             opacity: 0.7;
+            margin-top: 8px;
         }
 
         /* ===== FOOTER ===== */
         .site-footer {
-            padding: 30px 0;
+            padding: 32px 0;
             background: #1c1a17;
             color: #a69b8e;
             text-align: center;
@@ -337,11 +648,66 @@
         .site-footer a {
             color: #c9bdb0;
             text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        .site-footer a:hover {
+            color: #f5c542;
+        }
+
+        .site-footer .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+
+        .site-footer .footer-nav a {
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            background: #2a6b4a;
+            color: #fff;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+            box-shadow: 0 6px 20px rgba(42, 107, 74, 0.35);
+            transition: all 0.25s ease;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            display: flex;
+        }
+
+        .back-to-top:hover {
+            background: #1f543a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(42, 107, 74, 0.45);
         }
 
         /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) {
+            .destinations-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         @media (max-width: 992px) {
-            .hero-grid {
+            .hero-inner {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
@@ -350,82 +716,179 @@
                 font-size: 2.4rem;
             }
 
-            .hero-image img {
-                height: 300px;
+            .hero-image-wrapper {
+                aspect-ratio: 16 / 9;
+                max-height: 380px;
             }
 
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: 1.9rem;
             }
         }
 
-        @media (max-width: 640px) {
-            .hero {
-                padding: 40px 0 50px;
+        @media (max-width: 768px) {
+            .destinations-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .destination-card .card-body h3 {
+                font-size: 0.95rem;
+            }
+
+            .destination-card .card-body p {
+                font-size: 0.78rem;
             }
 
             .hero-content h1 {
-                font-size: 1.9rem;
+                font-size: 2rem;
             }
 
             .hero-content p {
                 font-size: 1rem;
             }
 
-            .hero-content .highlight {
+            .hero-stats {
                 flex-direction: column;
                 gap: 8px;
             }
 
-            .hero-image img {
-                height: 220px;
-            }
-
-            .features-grid {
+            .why-grid {
                 grid-template-columns: 1fr 1fr;
             }
 
-            .gallery-grid {
+            .section-padding {
+                padding: 50px 0;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .destinations-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 12px;
+                gap: 10px;
             }
 
-            .gallery-grid img {
-                height: 160px;
+            .destination-card .card-img {
+                aspect-ratio: 1 / 1;
             }
 
-            .cta-final h2 {
-                font-size: 1.8rem;
+            .destination-card .card-body {
+                padding: 12px 14px 14px;
             }
 
-            .btn-primary {
-                padding: 14px 32px;
-                font-size: 1rem;
-                width: 100%;
-                text-align: center;
+            .destination-card .card-body h3 {
+                font-size: 0.88rem;
+            }
+
+            .destination-card .card-body p {
+                font-size: 0.73rem;
+                line-height: 1.3;
+            }
+
+            .destination-card .card-body .card-link {
+                font-size: 0.75rem;
+            }
+
+            .hero {
+                padding: 30px 0 50px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .hero-image-wrapper {
+                aspect-ratio: 4 / 3;
+                max-height: 250px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card .featured-body h3 {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .header-nav {
+                gap: 10px;
+            }
+
+            .header-nav a {
+                font-size: 0.78rem;
             }
 
             .header-cta {
-                font-size: 0.8rem;
-                padding: 6px 16px;
+                font-size: 0.78rem;
+                padding: 6px 14px;
             }
 
             .logo {
                 font-size: 1.1rem;
             }
+
+            .logo span {
+                font-size: 0.7rem;
+            }
+
+            .btn-primary,
+            .btn-gold {
+                padding: 13px 28px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                flex: auto;
+                width: 100%;
+            }
+
+            .newsletter-form .btn-gold {
+                width: 100%;
+            }
         }
 
-        @media (max-width: 440px) {
-            .features-grid {
+        @media (max-width: 380px) {
+            .destinations-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
             }
 
-            .gallery-grid {
-                grid-template-columns: 1fr;
+            .destination-card .card-img {
+                aspect-ratio: 16 / 10;
             }
 
-            .gallery-grid img {
-                height: 200px;
+            .destination-card .card-body h3 {
+                font-size: 0.95rem;
+            }
+
+            .destination-card .card-body p {
+                font-size: 0.8rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -435,157 +898,419 @@
     <!-- ======= HEADER ======= -->
     <header class="site-header">
         <div class="container header-inner">
-            <div class="logo">🌲 Cabane<span> în Bulgaria - oferta 2026</span></div>
-            <a href="#rezerva" class="header-cta">Rezervă acum</a>
+            <a href="/" class="logo">
+                <span class="logo-icon">🌍</span> Evadari<span>.ro</span>
+            </a>
+            <nav class="header-nav">
+                <a href="#destinatii">Destinații</a>
+                <a href="#recomandate">Recomandări</a>
+                <a href="#de-ce">De ce Balcani</a>
+                <a href="#newsletter" class="header-cta">Newsletter</a>
+            </nav>
         </div>
     </header>
 
     <!-- ======= HERO ======= -->
     <section class="hero">
-        <div class="container hero-grid">
+        <div class="container hero-inner">
             <div class="hero-content">
+                <span class="hero-badge">🌟 Evadari de neuitat</span>
                 <h1>
-                    Evadari în natură,<br />
-                    la <em>15 km de mare</em>
+                    Descoperă cele mai <em>frumoase</em> locuri<br />
+                    de evadare din Balcani
                 </h1>
                 <p>
-                    5 cabane din lemn, cu 2 dormitoare, bucătărie complet utilată
-                    și liniștea dealurilor. Perfect pentru familii și cupluri
-                    care caută relaxare si liniste in natura.
+                    O colecție atent curtată de cabane, case de oaspeți și retreaturi
+                    excepționale — pentru familii, cupluri și oricine caută liniștea
+                    autentică a naturii.
                 </p>
-                <div class="highlight">
-                    <span>🏡 5 cabane private</span>
-                    <span>🛏️ 2 dormitoare fiecare</span>
-                    <span>🍳 Bucătărie + baie proprie</span>
-                    <span>🌿 Regiune deluroasă, aer curat</span>
-                    <span>🌿 Marea la 20 de minute de condus.</span>
+                <div class="hero-stats">
+                    <span><b class="stat-number">12</b> țări balcanice</span>
+                    <span><b class="stat-number">50+</b> destinații verificate</span>
+                    <span><b class="stat-number">100%</b> recomandate de noi</span>
                 </div>
-                <a href="#rezerva" class="btn-primary">Vezi disponibilitatea</a>
+                <a href="#destinatii" class="btn-primary">🔍 Explorează destinațiile</a>
             </div>
-            <div class="hero-image">
-                <!-- Proprietary photo: wooden cabin exterior in nature -->
+            <div class="hero-image-wrapper">
+                <!--
+                ⚠️ IMAGINE HERO — Înlocuiește cu o imagine reprezentativă pentru Balcani
+                Sugestii: peisaj montan balcanic, casă tradițională, lac sau coastă.
+                Dimensiune recomandată: 1200×900 px (4:3).
+                -->
                 <img
-                src="lionforest01.jpg?w=800&auto=format&fit=crop"
-                alt="Cabane din lemn în mijlocul naturii, Bulgaria"
-                loading="lazy"
+                src="https://picsum.photos/seed/balkan-dreamscape/1200/900"
+                alt="Peisaj spectaculos din Balcani — destinații de evadare"
+                loading="eager"
                 />
+                <div class="img-overlay"></div>
             </div>
         </div>
     </section>
 
-    <!-- ======= FEATURES ======= -->
-    <section class="features">
+    <!-- ======= DESTINATIONS GRID ======= -->
+    <section class="destinations-section section-padding" id="destinatii">
         <div class="container">
-            <h2>De ce să alegi această destinație?</h2>
-            <p class="subtitle">
-                Tot ce ai nevoie pentru o vacanță relaxantă, departe de agitație.
+            <span class="section-label">🌍 Țări balcanice</span>
+            <h2 class="section-title">Alege o țară și începe explorarea</h2>
+            <p class="section-subtitle">
+                Fiecare colț al Balcanilor ascunde locuri excepționale. Am selectat cele mai
+                frumoase destinații pentru tine — de la plaje ascunse la cabane de munte.
             </p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="icon">🏠</span>
-                    <h3>5 cabane identice</h3>
-                    <p>Fiecare cu 2 dormitoare, living, bucătărie și baie proprie. Intimitate totală.</p>
+            <div class="destinations-grid">
+
+                <!-- ROMÂNIA -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în România">
+                    <div class="card-img">
+                        <span class="country-flag">🇷🇴</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/romania-carpati/400/300" alt="România — peisaje carpatice" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>România</h3>
+                        <p>Carpați, Delta Dunării și sate tradiționale autentice.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <span class="icon">👨‍👩‍👧‍👦</span>
-                    <h3>Orientat către familie</h3>
-                    <p>Spațiu generos pentru copii, curte îngrijită și liniște pentru părinți.</p>
+
+                <!-- BULGARIA -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Bulgaria">
+                    <div class="card-img">
+                        <span class="country-flag">🇧🇬</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/bulgaria-mountains/400/300" alt="Bulgaria — plaje și munți" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Bulgaria</h3>
+                        <p>Plaje aurii, munți străvechi și stațiuni balneare.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <span class="icon">🌊</span>
-                    <h3>La 15 mile de mare</h3>
-                    <p>Suficient de aproape pentru o escapadă la plajă, dar destul de departe pentru aer curat.</p>
+
+                <!-- SERBIA -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Serbia">
+                    <div class="card-img">
+                        <span class="country-flag">🇷🇸</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/serbia-danube/400/300" alt="Serbia — defilee dunărene" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Serbia</h3>
+                        <p>Orașe vibrante, defilee dunărene și gastronomie locală.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <span class="icon">🔥</span>
-                    <h3>Autentic & confortabil</h3>
-                    <p>Construcție din lemn, interioare moderne, dar cu căldura casei de la țară.</p>
+
+                <!-- MUNTENEGRU -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Muntenegru">
+                    <div class="card-img">
+                        <span class="country-flag">🇲🇪</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/montenegro-kotor/400/300" alt="Muntenegru — Golful Kotor" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Muntenegru</h3>
+                        <p>Fiorduri adriatice, Golful Kotor și plaje sălbatice.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
                 </div>
+
+                <!-- CROAȚIA -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Croația">
+                    <div class="card-img">
+                        <span class="country-flag">🇭🇷</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/croatia-dalmatia/400/300" alt="Croația — coasta dalmată" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Croația</h3>
+                        <p>Coasta dalmată, insule de poveste și parcuri naturale.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
+                </div>
+
+                <!-- SLOVENIA -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Slovenia">
+                    <div class="card-img">
+                        <span class="country-flag">🇸🇮</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/slovenia-bled/400/300" alt="Slovenia — Lacul Bled" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Slovenia</h3>
+                        <p>Lacul Bled, Alpii Iulieni și peșteri spectaculoase.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
+                </div>
+
+                <!-- BOSNIA ȘI HERȚEGOVINA -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Bosnia și Herțegovina">
+                    <div class="card-img">
+                        <span class="country-flag">🇧🇦</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/bosnia-rivers/400/300" alt="Bosnia — râuri de smarald" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Bosnia & Herțegovina</h3>
+                        <p>Râuri de smarald, cascade sălbatice și orașe istorice.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
+                </div>
+
+                <!-- MACEDONIA DE NORD -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Macedonia de Nord">
+                    <div class="card-img">
+                        <span class="country-flag">🇲🇰</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/macedonia-ohrid/400/300" alt="Macedonia de Nord — Lacul Ohrid" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Macedonia de Nord</h3>
+                        <p>Lacul Ohrid, mănăstiri ortodoxe și peisaje alpine.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
+                </div>
+
+                <!-- ALBANIA -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Albania">
+                    <div class="card-img">
+                        <span class="country-flag">🇦🇱</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/albania-riviera/400/300" alt="Albania — riviera ascunsă" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Albania</h3>
+                        <p>Riviera ascunsă a Europei, sate de munte și plaje virgine.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
+                </div>
+
+                <!-- GRECIA -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Grecia">
+                    <div class="card-img">
+                        <span class="country-flag">🇬🇷</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/greece-islands/400/300" alt="Grecia — insule legendare" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Grecia</h3>
+                        <p>Insule legendare, plaje turcoaz și taverne autentice.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
+                </div>
+
+                <!-- KOSOVO -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Kosovo">
+                    <div class="card-img">
+                        <span class="country-flag">🇽🇰</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/kosovo-mountains/400/300" alt="Kosovo — munți accidentați" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Kosovo</h3>
+                        <p>Munți accidentați, orașe tinere și ospitalitate autentică.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
+                </div>
+
+                <!-- TURCIA (partea europeană) -->
+                <div class="destination-card" tabindex="0" role="link" aria-label="Destinații în Turcia — Tracia">
+                    <div class="card-img">
+                        <span class="country-flag">🇹🇷</span>
+                        <span class="card-badge">Vezi</span>
+                        <img src="https://picsum.photos/seed/turkey-thrace/400/300" alt="Turcia — Tracia și Istanbul" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Turcia</h3>
+                        <p>Tracia și Istanbul — poarta dintre continente, plaje exotice.</p>
+                        <span class="card-link">Vezi destinații →</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ======= GALLERY ======= -->
-    <section class="gallery">
+    <!-- ======= FEATURED PROPERTIES ======= -->
+    <section class="featured-section section-padding" id="recomandate">
         <div class="container">
-            <h2>Privire în interior</h2>
-            <p class="subtitle">Cum arată cabanele — confort, lemn și lumină.</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img
-                    src="lionforest11.jpeg?w=600&auto=format&fit=crop"
-                    alt="Living interior cu canapea și lemn"
-                    loading="lazy"
-                    />
-                    <div class="caption">Living spațios</div>
-                </div>
-                <div class="gallery-item">
-                    <img
-                    src="lionforest12.jpg?w=600&auto=format&fit=crop"
-                    alt="Bucătărie modernă utilată complet"
-                    loading="lazy"
-                    />
-                    <div class="caption">Bucătărie complet utilată</div>
-                </div>
-                <div class="gallery-item">
-                    <img
-                    src="lionforest13.jpg?w=600&auto=format&fit=crop"
-                    alt="Dormitor dublu cu vedere la natură"
-                    loading="lazy"
-                    />
-                    <div class="caption">Dormitor principal</div>
-                </div>
-                <div class="gallery-item">
-                    <img
-                    src="lionforest14.jpg?w=600&auto=format&fit=crop"
-                    alt="Vedere exterioară a cabanelor pe deal"
-                    loading="lazy"
-                    />
-                    <div class="caption">Peisajul din jur</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======= FINAL CTA ======= -->
-    <section class="cta-final" id="rezerva">
-        <div class="container">
-            <h2>Verifică disponibilitatea</h2>
-            <p>
-                Intră direct pe platforma de rezervări a cabanelor. Vezi prețurile,
-                alege datele și bucură-te de o vacanță autentică în Bulgaria.
+            <span class="section-label">⭐ Recomandările noastre</span>
+            <h2 class="section-title">Destinații excepționale — verificate de noi</h2>
+            <p class="section-subtitle">
+                Locuri care ne-au cucerit. Le-am vizitat, le-am testat și le recomandăm
+                cu toată inima. Aici încep evadările tale perfecte.
             </p>
-            <!-- 
-                ⚠️ IMPORTANT: Replace the href below with the ACTUAL booking page URL 
-                provided by the Bulgarian property owner. Keep the ?ref=RO_PARTNER 
-                parameter so they can track your referrals.
-            -->
-            <a
-            href="https://platforma-lor-booking.com/rezerva?ref=RO_PARTNER"
-            class="btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            ➡️ Mergi la rezervare
-        </a>
-        <p class="small-note">
-            Vei fi redirecționat către site-ul partenerului nostru din Bulgaria.
-            Rezervarea se face direct cu ei.
+            <div class="featured-grid">
+
+                <!-- Lion Forest — Bulgaria -->
+                <div class="featured-card">
+                    <div class="featured-img">
+                        <span class="featured-badge">🏆 Top Choice</span>
+                        <!-- ⚠️ Înlocuiește cu imagine reală Lion Forest -->
+                        <img src="img/lionforest01.jpg" alt="Lion Forest — cabane din lemn în Bulgaria" loading="lazy" />
+                    </div>
+                    <div class="featured-body">
+                        <span class="location">🇧🇬 Bulgaria · la 15 km de mare</span>
+                        <h3>Lion Forest — Cabane în natură</h3>
+                        <p>
+                            5 cabane private din lemn, fiecare cu 2 dormitoare, bucătărie complet
+                            utilată și intimitate totală. Perfect pentru familii și cupluri
+                            care vor liniștea dealurilor, la doar 20 de minute de plajă.
+                        </p>
+                        <div class="featured-tags">
+                            <span class="tag">🏡 5 cabane</span>
+                            <span class="tag">🛏️ 2 dormitoare</span>
+                            <span class="tag">🍳 Bucătărie</span>
+                            <span class="tag">🌿 Natură</span>
+                            <span class="tag">🌊 Aproape de mare</span>
+                        </div>
+                        <!-- BUTON "REZERVĂ ACUM" -->
+                        <a href="https://www.lionsforest.bg/" class="btn-primary" style="margin-top: 8px; align-self: flex-start;">
+                            Rezervă acum
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Luna, apa și timpul — România -->
+                <div class="featured-card">
+                    <div class="featured-img">
+                        <span class="featured-badge">🌙 Hidden Gem</span>
+                        <!--
+                        ⚠️ Înlocuiește cu imagine reală pentru Luna, apa și timpul
+                        Vezi pagina de Facebook pentru referință:
+                        https://www.facebook.com/p/Luna-apa-si-timpul-100083507794855/
+                        -->
+                        <img src="img/luna.jpg" alt="Luna, apa și timpul — retreat în România" loading="lazy" />
+                    </div>
+                    <div class="featured-body">
+                        <span class="location">🇷🇴 România · locație de poveste</span>
+                        <h3>Luna, apa și timpul</h3>
+                        <p>
+                            Un refugiu aparte unde natura, liniștea și designul autentic se întâlnesc.
+                            O experiență rară, gândită pentru cei care caută mai mult decât o simplă
+                            cazare — o evadare care rămâne în suflet.
+                        </p>
+                        <div class="featured-tags">
+                            <span class="tag">🌙 Atmosferă unică</span>
+                            <span class="tag">💧 Apă și natură</span>
+                            <span class="tag">🕰️ Timpul încetinește</span>
+                            <span class="tag">📸 Loc Instagramabil</span>
+                        </div>
+                        <!-- BUTON "REZERVĂ ACUM" -->
+                        <a href="https://www.facebook.com/p/Luna-apa-si-timpul-100083507794855/"
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn-primary" style="margin-top: 8px; align-self: flex-start;">
+                        Rezervă acum
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ======= WHY BALKANS (8 motive) ======= -->
+<section class="why-section section-padding" id="de-ce">
+    <div class="container">
+        <span class="section-label">💡 De ce Balcanii?</span>
+        <h2 class="section-title centered">Avantajele unei evadări balcanice</h2>
+        <p class="section-subtitle centered">
+            Balcanii sunt comoara ascunsă a Europei — aproape de casă, accesibili
+            și plini de surprize. Iată 8 motive pentru care merită să alegi această regiune.
         </p>
+        <div class="why-grid">
+            <!-- 1. Aproape de România -->
+            <div class="why-card">
+                <span class="why-icon">🚗</span>
+                <h3>Aproape de România</h3>
+                <p>Majoritatea destinațiilor sunt la câteva ore de condus — ideal pentru city-break-uri și vacanțe spontane.</p>
+            </div>
+            <!-- 2. Prețuri accesibile -->
+            <div class="why-card">
+                <span class="why-icon">💰</span>
+                <h3>Prețuri accesibile</h3>
+                <p>Cazare, masă și experiențe la prețuri mult mai mici decât în vestul Europei, fără compromisuri la calitate.</p>
+            </div>
+            <!-- 3. Natură spectaculoasă -->
+            <div class="why-card">
+                <span class="why-icon">🌿</span>
+                <h3>Natură spectaculoasă</h3>
+                <p>Munți, lacuri, plaje și păduri — peisaje care îți taie respirația, încă neaglomerate și autentice.</p>
+            </div>
+            <!-- 4. Gastronomie locală -->
+            <div class="why-card">
+                <span class="why-icon">🍽️</span>
+                <h3>Gastronomie locală</h3>
+                <p>Bucătăria balcanică e o sărbătoare a simțurilor — gustoasă, variată și făcută din ingrediente proaspete.</p>
+            </div>
+            <!-- 5. Ospitalitate caldă -->
+            <div class="why-card">
+                <span class="why-icon">🤝</span>
+                <h3>Ospitalitate caldă</h3>
+                <p>Oamenii din Balcani primesc oaspeții cu brațele deschise. Vei pleca mereu cu amintiri frumoase.</p>
+            </div>
+            <!-- 6. Istorie și cultură -->
+            <div class="why-card">
+                <span class="why-icon">🏰</span>
+                <h3>Istorie și cultură</h3>
+                <p>De la cetăți medievale la mănăstiri străvechi — fiecare colț spune o poveste fascinantă.</p>
+            </div>
+            <!-- 7. Aventură și sport -->
+            <div class="why-card">
+                <span class="why-icon">🧗</span>
+                <h3>Aventură și sport</h3>
+                <p>Drumeții, rafting, ciclism montan sau schi — Balcanii sunt terenul perfect pentru vacanțe active în mijlocul naturii.</p>
+            </div>
+            <!-- 8. Wellness și relaxare -->
+            <div class="why-card">
+                <span class="why-icon">♨️</span>
+                <h3>Wellness și relaxare</h3>
+                <p>Stațiuni balneare renumite, izvoare termale și centre spa — locul ideal pentru a-ți reîncărca bateriile.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= NEWSLETTER CTA ======= -->
+<section class="newsletter-section section-padding" id="newsletter">
+    <div class="container">
+        <span class="section-label" style="background:#ffffff33;color:#fff;">📬 Rămâi conectat</span>
+        <h2 class="section-title centered">Fii primul care află de noi destinații</h2>
+        <p class="section-subtitle centered">
+            În fiecare lună adăugăm locuri noi, verificate de noi. Abonează-te
+            și primești cele mai frumoase recomandări direct în inbox — fără spam.
+        </p>
+        <form class="newsletter-form" action="#" method="POST">
+            <!-- ⚠️ Înlocuiește action="#" cu URL-ul serviciului tău de newsletter (ex: Mailchimp, Brevo) -->
+            <input type="email" name="email" placeholder="Adresa ta de email..." required aria-label="Adresa de email" />
+            <button type="submit" class="btn-gold">✉️ Abonează-mă</button>
+        </form>
+        <p class="small-note">Nu îți vom umple inboxul. Maxim 1-2 emailuri pe lună. Promitem.</p>
     </div>
 </section>
 
 <!-- ======= FOOTER ======= -->
 <footer class="site-footer">
     <div class="container">
+        <nav class="footer-nav">
+            <a href="#destinatii">Destinații</a>
+            <a href="#recomandate">Recomandări</a>
+            <a href="#de-ce">De ce Balcani</a>
+            <a href="#newsletter">Newsletter</a>
+            <a href="mailto:contact@evadari.ro">Contact</a>
+        </nav>
         <p>
-            &copy; 2026 — Proiect turistic pentru familii românești.
-            Imagini reale de la Lion Forest din Bulgaria.
+            &copy; 2026 <strong>Evadari.ro</strong> — Ghidul tău către cele mai frumoase
+            destinații din Balcani. <br class="mobile-break" />
+            Toate recomandările sunt verificate de echipa noastră.
+            <a href="#">Politica de confidențialitate</a>.
         </p>
     </div>
 </footer>
 
-<!-- ======= SMOOTH SCROLL (optional) ======= -->
+<!-- ======= BACK TO TOP ======= -->
+<button class="back-to-top" id="backToTop" aria-label="Înapoi sus" title="Înapoi sus">↑</button>
+
+<!-- ======= SCRIPTS ======= -->
 <script>
     (function() {
         // Smooth scroll for internal anchor links
@@ -600,6 +1325,52 @@
                 }
             });
         });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Add subtle entrance animation for cards (Intersection Observer)
+        if ('IntersectionObserver' in window) {
+            const cards = document.querySelectorAll('.destination-card, .featured-card, .why-card');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+            );
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        } else {
+            // Fallback for older browsers
+            document.querySelectorAll('.destination-card, .featured-card, .why-card').forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            });
+        }
     })();
 </script>
 
