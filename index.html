@@ -636,124 +636,113 @@
             margin-top: 8px;
         }
 
-        /* ===== FOOTER ===== */
+        /* =========================================================
+                   FOOTER – Varianta A/B (single line, both brands linked)
+                   ========================================================= */
         .site-footer {
-            padding: 32px 0 20px;
+            padding: 36px 0 24px;
             background: #1c1a17;
             color: #a69b8e;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #2f2b27;
         }
 
-        .site-footer a {
-            color: #c9bdb0;
-            transition: color 0.2s;
-        }
-
-        .site-footer a:hover {
-            color: #f5c542;
-        }
-
-        /* Footer top: Evadari info */
-        .footer-top {
-            border-bottom: 1px solid #2f2b27;
-            padding-bottom: 24px;
-            margin-bottom: 24px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px 24px;
-        }
-
-        .footer-top p {
-            margin: 0;
-            max-width: 600px;
-            line-height: 1.5;
-        }
-
-        .footer-top .footer-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px 20px;
-        }
-
-        .footer-top .footer-nav a {
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        /* Footer bottom: Job Done Marketing LLC */
-        .footer-bottom {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2rem 1.5rem;
-        }
-
-        .footer-project {
-            flex: 1 1 280px;
-        }
-
-        .footer-project .project-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #6b5e4e;
-            font-weight: 500;
-            margin-bottom: 0.3rem;
-        }
-
-        .footer-project .company-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #c9bdb0;
-        }
-
-        .footer-project .company-name .year {
-            font-weight: 400;
-            color: #6b5e4e;
-        }
-
-        .footer-contact {
-            flex: 1 1 340px;
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
-            font-size: 0.85rem;
-            line-height: 1.6;
+            align-items: center;
+            gap: 18px;
+        }
+
+        /* Single copyright line with both brands linked */
+        .footer-copy {
+            font-size: 0.95rem;
             color: #a69b8e;
+            text-align: center;
+            letter-spacing: 0.2px;
+        }
+
+        .footer-copy a {
+            color: #c9bdb0;
+            font-weight: 600;
+            transition: color 0.25s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .footer-copy a:hover {
+            color: #f5c542;
+            border-bottom-color: #f5c542;
+        }
+
+        .footer-copy .ampersand {
+            color: #6b5e4e;
+            font-weight: 300;
+            margin: 0 4px;
+        }
+
+        /* Contact details — compact, label-based */
+        .footer-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 24px;
+            font-size: 0.8rem;
+            color: #7a6e5e;
+            border-top: 1px solid #2f2b27;
+            padding-top: 16px;
+            width: 100%;
+            max-width: 780px;
         }
 
         .footer-contact .contact-item {
             display: flex;
             align-items: baseline;
-            gap: 0.5rem;
-            flex-wrap: wrap;
+            gap: 4px;
+            white-space: nowrap;
         }
 
         .footer-contact .contact-item .label {
-            color: #6b5e4e;
-            font-weight: 450;
-            min-width: 48px;
-            font-size: 0.75rem;
+            color: #5a4f3f;
+            font-weight: 500;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.6px;
         }
 
         .footer-contact .contact-item .value {
-            color: #c9bdb0;
-            word-break: break-word;
+            color: #b5a898;
         }
 
         .footer-contact .contact-item .value a {
-            color: #f5c542;
-            text-decoration: none;
+            color: #b5a898;
+            transition: color 0.25s ease;
             border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
         }
 
         .footer-contact .contact-item .value a:hover {
+            color: #f5c542;
             border-bottom-color: #f5c542;
+        }
+
+        /* Footer nav (optional) – but we keep it minimal per A/B test */
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 20px;
+            font-size: 0.8rem;
+        }
+
+        .footer-nav a {
+            color: #7a6e5e;
+            transition: color 0.25s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #f5c542;
         }
 
         /* ===== BACK TO TOP ===== */
@@ -854,18 +843,21 @@
                 padding: 50px 0;
             }
 
-            .footer-top {
+            .footer-contact {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                gap: 4px 0;
+                white-space: normal;
+                text-align: center;
             }
 
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1.5rem;
+            .footer-contact .contact-item {
+                white-space: normal;
             }
 
-            .footer-contact .contact-item .label {
-                min-width: 40px;
+            .footer-copy {
+                font-size: 0.85rem;
+                line-height: 1.5;
             }
         }
 
@@ -969,6 +961,11 @@
             .newsletter-form .btn-gold {
                 width: 100%;
             }
+
+            .footer-nav {
+                gap: 6px 14px;
+                font-size: 0.75rem;
+            }
         }
 
         @media (max-width: 380px) {
@@ -991,6 +988,10 @@
 
             .hero-content h1 {
                 font-size: 1.5rem;
+            }
+
+            .footer-copy {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -1034,11 +1035,6 @@
                 <a href="#destinatii" class="btn-primary">🔍 Explorează destinațiile</a>
             </div>
             <div class="hero-image-wrapper">
-                <!--
-                ⚠️ IMAGINE HERO — Înlocuiește cu o imagine reprezentativă pentru Balcani
-                Sugestii: peisaj montan balcanic, casă tradițională, lac sau coastă.
-                Dimensiune recomandată: 1200×900 px (4:3).
-                -->
                 <img
                 src="https://picsum.photos/seed/balkan-dreamscape/1200/900"
                 alt="Peisaj spectaculos din Balcani — destinații de evadare"
@@ -1247,7 +1243,6 @@
                 <div class="featured-card">
                     <div class="featured-img">
                         <span class="featured-badge">🏆 Top Choice</span>
-                        <!-- ⚠️ Înlocuiește cu imagine reală Lion Forest -->
                         <img src="img/lionforest01.jpg" alt="Lion Forest — cabane din lemn în Bulgaria" loading="lazy" />
                     </div>
                     <div class="featured-body">
@@ -1265,7 +1260,6 @@
                             <span class="tag">🌿 Natură</span>
                             <span class="tag">🌊 Aproape de mare</span>
                         </div>
-                        <!-- BUTON "REZERVĂ ACUM" -->
                         <a href="https://www.lionsforest.bg/" target="_blank" class="btn-primary" style="margin-top: 8px; align-self: flex-start;">
                             Rezervă acum
                         </a>
@@ -1276,11 +1270,6 @@
                 <div class="featured-card">
                     <div class="featured-img">
                         <span class="featured-badge">🌙 Hidden Gem</span>
-                        <!--
-                        ⚠️ Înlocuiește cu imagine reală pentru Luna, apa și timpul
-                        Vezi pagina de Facebook pentru referință:
-                        https://www.facebook.com/p/Luna-apa-si-timpul-100083507794855/
-                        -->
                         <img src="img/luna.jpg" alt="Luna, apa și timpul — retreat în România" loading="lazy" />
                     </div>
                     <div class="featured-body">
@@ -1297,7 +1286,6 @@
                             <span class="tag">🕰️ Timpul încetinește</span>
                             <span class="tag">📸 Loc Instagramabil</span>
                         </div>
-                        <!-- BUTON "REZERVĂ ACUM" -->
                         <a href="https://lunavenue.com/"
                         target="_blank" rel="noopener noreferrer"
                         class="btn-primary" style="margin-top: 8px; align-self: flex-start;">
@@ -1320,49 +1308,41 @@
             și plini de surprize. Iată 8 motive pentru care merită să alegi această regiune.
         </p>
         <div class="why-grid">
-            <!-- 1. Aproape de România -->
             <div class="why-card">
                 <span class="why-icon">🚗</span>
                 <h3>Aproape de România</h3>
                 <p>Majoritatea destinațiilor sunt la câteva ore de condus — ideal pentru city-break-uri și vacanțe spontane.</p>
             </div>
-            <!-- 2. Prețuri accesibile -->
             <div class="why-card">
                 <span class="why-icon">💰</span>
                 <h3>Prețuri accesibile</h3>
                 <p>Cazare, masă și experiențe la prețuri mult mai mici decât în vestul Europei, fără compromisuri la calitate.</p>
             </div>
-            <!-- 3. Natură spectaculoasă -->
             <div class="why-card">
                 <span class="why-icon">🌿</span>
                 <h3>Natură spectaculoasă</h3>
                 <p>Munți, lacuri, plaje și păduri — peisaje care îți taie respirația, încă neaglomerate și autentice.</p>
             </div>
-            <!-- 4. Gastronomie locală -->
             <div class="why-card">
                 <span class="why-icon">🍽️</span>
                 <h3>Gastronomie locală</h3>
                 <p>Bucătăria balcanică e o sărbătoare a simțurilor — gustoasă, variată și făcută din ingrediente proaspete.</p>
             </div>
-            <!-- 5. Ospitalitate caldă -->
             <div class="why-card">
                 <span class="why-icon">🤝</span>
                 <h3>Ospitalitate caldă</h3>
                 <p>Oamenii din Balcani primesc oaspeții cu brațele deschise. Vei pleca mereu cu amintiri frumoase.</p>
             </div>
-            <!-- 6. Istorie și cultură -->
             <div class="why-card">
                 <span class="why-icon">🏰</span>
                 <h3>Istorie și cultură</h3>
                 <p>De la cetăți medievale la mănăstiri străvechi — fiecare colț spune o poveste fascinantă.</p>
             </div>
-            <!-- 7. Aventură și sport -->
             <div class="why-card">
                 <span class="why-icon">🧗</span>
                 <h3>Aventură și sport</h3>
                 <p>Drumeții, rafting, ciclism montan sau schi — Balcanii sunt terenul perfect pentru vacanțe active în mijlocul naturii.</p>
             </div>
-            <!-- 8. Wellness și relaxare -->
             <div class="why-card">
                 <span class="why-icon">♨️</span>
                 <h3>Wellness și relaxare</h3>
@@ -1382,7 +1362,6 @@
             și primești cele mai frumoase recomandări direct în inbox — fără spam.
         </p>
         <form class="newsletter-form" action="#" method="POST">
-            <!-- ⚠️ Înlocuiește action="#" cu URL-ul serviciului tău de newsletter (ex: Mailchimp, Brevo) -->
             <input type="email" name="email" placeholder="Adresa ta de email..." required aria-label="Adresa de email" />
             <button type="submit" class="btn-gold">✉️ Abonează-mă</button>
         </form>
@@ -1390,53 +1369,43 @@
     </div>
 </section>
 
-<!-- ======= FOOTER ======= -->
+<!-- ======= FOOTER — Varianta A/B ======= -->
 <footer class="site-footer">
-    <div class="container">
+    <div class="footer-inner">
 
-        <!-- ⬆️ Evadari.ro info (top) -->
-        <div class="footer-top">
-            <p>
-                &copy; 2026 <strong style="color:#c9bdb0;">Evadari.ro</strong> — Ghidul tău către cele mai frumoase
-                destinații din Balcani. <br class="mobile-break" />
-                Toate recomandările sunt verificate de echipa noastră.
-            </p>
-            <nav class="footer-nav">
-                <a href="#destinatii">Destinații</a>
-                <a href="#recomandate">Recomandări</a>
-                <a href="#de-ce">De ce Balcani</a>
-                <a href="#newsletter">Newsletter</a>
-                <a href="mailto:contact@evadari.ro">Contact</a>
-                <a href="#">Confidențialitate</a>
-            </nav>
+        <!-- SINGLE COPYRIGHT LINE: both brands linked -->
+        <div class="footer-copy">
+            © 2026
+            <a href="https://evadari.ro" target="_blank" rel="noopener">Evadari.ro</a>
+            <span class="ampersand">&amp;</span>
+            <a href="https://jobdone.marketing" target="_blank" rel="noopener">Job Done Marketing</a>
         </div>
 
-        <!-- ⬇️ Job Done Marketing LLC (bottom) -->
-        <div class="footer-bottom">
-            <div class="footer-project">
-                <div class="project-label">This is a project of:</div>
-                <div class="company-name">
-                    Job Done Marketing LLC
-                    <span class="year">© 2026</span>
-                </div>
-            </div>
-            <div class="footer-contact">
-                <div class="contact-item">
-                    <span class="label">Office</span>
-                    <span class="value">1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110, USA</span>
-                </div>
-                <div class="contact-item">
-                    <span class="label">Fax</span>
-                    <span class="value">+1 202-235-8439</span>
-                </div>
-                <div class="contact-item">
-                    <span class="label">Email</span>
-                    <span class="value">
-                        <a href="mailto:jobdonemarketing@proton.me">jobdonemarketing@proton.me</a>
-                    </span>
-                </div>
-            </div>
+        <!-- Compact contact details -->
+        <div class="footer-contact">
+            <span class="contact-item">
+                <span class="label">Office</span>
+                <span class="value">1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110, USA</span>
+            </span>
+            <span class="contact-item">
+                <span class="label">Fax</span>
+                <span class="value">+1 202-235-8439</span>
+            </span>
+            <span class="contact-item">
+                <span class="label">Email</span>
+                <span class="value"><a href="mailto:jobdonemarketing@proton.me">jobdonemarketing@proton.me</a></span>
+            </span>
         </div>
+
+        <!-- Minimal nav (privacy, about, etc.) -->
+        <nav class="footer-nav">
+            <a href="#destinatii">Destinații</a>
+            <a href="#recomandate">Recomandări</a>
+            <a href="#de-ce">De ce Balcani</a>
+            <a href="#newsletter">Newsletter</a>
+            <a href="mailto:contact@evadari.ro">Contact</a>
+            <a href="#">Confidențialitate</a>
+        </nav>
 
     </div>
 </footer>
@@ -1476,7 +1445,7 @@
             });
         }
 
-        // Add subtle entrance animation for cards (Intersection Observer)
+        // Entrance animation for cards
         if ('IntersectionObserver' in window) {
             const cards = document.querySelectorAll('.destination-card, .featured-card, .why-card');
             const observer = new IntersectionObserver(
@@ -1499,7 +1468,6 @@
                 observer.observe(card);
             });
         } else {
-            // Fallback for older browsers
             document.querySelectorAll('.destination-card, .featured-card, .why-card').forEach(card => {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
