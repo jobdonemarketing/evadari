@@ -638,16 +638,14 @@
 
         /* ===== FOOTER ===== */
         .site-footer {
-            padding: 32px 0;
+            padding: 32px 0 20px;
             background: #1c1a17;
             color: #a69b8e;
-            text-align: center;
             font-size: 0.85rem;
         }
 
         .site-footer a {
             color: #c9bdb0;
-            text-decoration: underline;
             transition: color 0.2s;
         }
 
@@ -655,17 +653,107 @@
             color: #f5c542;
         }
 
-        .site-footer .footer-nav {
+        /* Footer top: Evadari info */
+        .footer-top {
+            border-bottom: 1px solid #2f2b27;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 16px;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px 24px;
         }
 
-        .site-footer .footer-nav a {
-            text-decoration: none;
+        .footer-top p {
+            margin: 0;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        .footer-top .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+        }
+
+        .footer-top .footer-nav a {
             font-weight: 500;
+            text-decoration: none;
+        }
+
+        /* Footer bottom: Job Done Marketing LLC */
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem 1.5rem;
+        }
+
+        .footer-project {
+            flex: 1 1 280px;
+        }
+
+        .footer-project .project-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6b5e4e;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-project .company-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #c9bdb0;
+        }
+
+        .footer-project .company-name .year {
+            font-weight: 400;
+            color: #6b5e4e;
+        }
+
+        .footer-contact {
+            flex: 1 1 340px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #a69b8e;
+        }
+
+        .footer-contact .contact-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact .contact-item .label {
+            color: #6b5e4e;
+            font-weight: 450;
+            min-width: 48px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-contact .contact-item .value {
+            color: #c9bdb0;
+            word-break: break-word;
+        }
+
+        .footer-contact .contact-item .value a {
+            color: #f5c542;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .footer-contact .contact-item .value a:hover {
+            border-bottom-color: #f5c542;
         }
 
         /* ===== BACK TO TOP ===== */
@@ -764,6 +852,20 @@
 
             .section-padding {
                 padding: 50px 0;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .footer-contact .contact-item .label {
+                min-width: 40px;
             }
         }
 
@@ -1291,19 +1393,51 @@
 <!-- ======= FOOTER ======= -->
 <footer class="site-footer">
     <div class="container">
-        <nav class="footer-nav">
-            <a href="#destinatii">Destinații</a>
-            <a href="#recomandate">Recomandări</a>
-            <a href="#de-ce">De ce Balcani</a>
-            <a href="#newsletter">Newsletter</a>
-            <a href="mailto:contact@evadari.ro">Contact</a>
-        </nav>
-        <p>
-            &copy; 2026 <strong>Evadari.ro</strong> — Ghidul tău către cele mai frumoase
-            destinații din Balcani. <br class="mobile-break" />
-            Toate recomandările sunt verificate de echipa noastră.
-            <a href="#">Politica de confidențialitate</a>.
-        </p>
+
+        <!-- ⬆️ Evadari.ro info (top) -->
+        <div class="footer-top">
+            <p>
+                &copy; 2026 <strong style="color:#c9bdb0;">Evadari.ro</strong> — Ghidul tău către cele mai frumoase
+                destinații din Balcani. <br class="mobile-break" />
+                Toate recomandările sunt verificate de echipa noastră.
+            </p>
+            <nav class="footer-nav">
+                <a href="#destinatii">Destinații</a>
+                <a href="#recomandate">Recomandări</a>
+                <a href="#de-ce">De ce Balcani</a>
+                <a href="#newsletter">Newsletter</a>
+                <a href="mailto:contact@evadari.ro">Contact</a>
+                <a href="#">Confidențialitate</a>
+            </nav>
+        </div>
+
+        <!-- ⬇️ Job Done Marketing LLC (bottom) -->
+        <div class="footer-bottom">
+            <div class="footer-project">
+                <div class="project-label">This is a project of:</div>
+                <div class="company-name">
+                    Job Done Marketing LLC
+                    <span class="year">© 2026</span>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <span class="label">Office</span>
+                    <span class="value">1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110, USA</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Fax</span>
+                    <span class="value">+1 202-235-8439</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Email</span>
+                    <span class="value">
+                        <a href="mailto:jobdonemarketing@proton.me">jobdonemarketing@proton.me</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </footer>
 
