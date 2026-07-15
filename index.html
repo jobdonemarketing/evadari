@@ -637,7 +637,7 @@
         }
 
         /* =========================================================
-                   FOOTER – Varianta A/B (single line, both brands linked)
+                   FOOTER – fără detalii de contact, doar navigare + copyright
                    ========================================================= */
         .site-footer {
             padding: 36px 0 24px;
@@ -654,15 +654,34 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
         }
 
-        /* Single copyright line with both brands linked */
+        /* Footer navigation */
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 20px;
+            font-size: 0.85rem;
+        }
+
+        .footer-nav a {
+            color: #7a6e5e;
+            transition: color 0.25s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #f5c542;
+        }
+
+        /* Single copyright line — last visible item */
         .footer-copy {
             font-size: 0.95rem;
             color: #a69b8e;
             text-align: center;
             letter-spacing: 0.2px;
+            margin-top: 4px;
         }
 
         .footer-copy a {
@@ -681,68 +700,6 @@
             color: #6b5e4e;
             font-weight: 300;
             margin: 0 4px;
-        }
-
-        /* Contact details — compact, label-based */
-        .footer-contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 6px 24px;
-            font-size: 0.8rem;
-            color: #7a6e5e;
-            border-top: 1px solid #2f2b27;
-            padding-top: 16px;
-            width: 100%;
-            max-width: 780px;
-        }
-
-        .footer-contact .contact-item {
-            display: flex;
-            align-items: baseline;
-            gap: 4px;
-            white-space: nowrap;
-        }
-
-        .footer-contact .contact-item .label {
-            color: #5a4f3f;
-            font-weight: 500;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-        }
-
-        .footer-contact .contact-item .value {
-            color: #b5a898;
-        }
-
-        .footer-contact .contact-item .value a {
-            color: #b5a898;
-            transition: color 0.25s ease;
-            border-bottom: 1px solid transparent;
-        }
-
-        .footer-contact .contact-item .value a:hover {
-            color: #f5c542;
-            border-bottom-color: #f5c542;
-        }
-
-        /* Footer nav (optional) – but we keep it minimal per A/B test */
-        .footer-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px 20px;
-            font-size: 0.8rem;
-        }
-
-        .footer-nav a {
-            color: #7a6e5e;
-            transition: color 0.25s ease;
-        }
-
-        .footer-nav a:hover {
-            color: #f5c542;
         }
 
         /* ===== BACK TO TOP ===== */
@@ -843,21 +800,14 @@
                 padding: 50px 0;
             }
 
-            .footer-contact {
-                flex-direction: column;
-                align-items: center;
-                gap: 4px 0;
-                white-space: normal;
-                text-align: center;
-            }
-
-            .footer-contact .contact-item {
-                white-space: normal;
-            }
-
             .footer-copy {
                 font-size: 0.85rem;
                 line-height: 1.5;
+            }
+
+            .footer-nav {
+                gap: 6px 14px;
+                font-size: 0.8rem;
             }
         }
 
@@ -963,8 +913,12 @@
             }
 
             .footer-nav {
-                gap: 6px 14px;
+                gap: 6px 12px;
                 font-size: 0.75rem;
+            }
+
+            .footer-copy {
+                font-size: 0.8rem;
             }
         }
 
@@ -988,10 +942,6 @@
 
             .hero-content h1 {
                 font-size: 1.5rem;
-            }
-
-            .footer-copy {
-                font-size: 0.8rem;
             }
         }
     </style>
@@ -1369,35 +1319,11 @@
     </div>
 </section>
 
-<!-- ======= FOOTER — Varianta A/B ======= -->
+<!-- ======= FOOTER — fără contact, ultimul element vizibil: copyright ======= -->
 <footer class="site-footer">
     <div class="footer-inner">
 
-        <!-- SINGLE COPYRIGHT LINE: both brands linked -->
-        <div class="footer-copy">
-            © 2026
-            <a href="https://evadari.ro" target="_blank" rel="noopener">Evadari.ro</a>
-            <span class="ampersand">&amp;</span>
-            <a href="https://jobdone.marketing" target="_blank" rel="noopener">Job Done Marketing</a>
-        </div>
-
-        <!-- Compact contact details -->
-        <div class="footer-contact">
-            <span class="contact-item">
-                <span class="label">Office</span>
-                <span class="value">1209 Mountain Road Pl NE, Ste N, Albuquerque, NM 87110, USA</span>
-            </span>
-            <span class="contact-item">
-                <span class="label">Fax</span>
-                <span class="value">+1 202-235-8439</span>
-            </span>
-            <span class="contact-item">
-                <span class="label">Email</span>
-                <span class="value"><a href="mailto:jobdonemarketing@proton.me">jobdonemarketing@proton.me</a></span>
-            </span>
-        </div>
-
-        <!-- Minimal nav (privacy, about, etc.) -->
+        <!-- Navigare (opțională) -->
         <nav class="footer-nav">
             <a href="#destinatii">Destinații</a>
             <a href="#recomandate">Recomandări</a>
@@ -1406,6 +1332,14 @@
             <a href="mailto:contact@evadari.ro">Contact</a>
             <a href="#">Confidențialitate</a>
         </nav>
+
+        <!-- SINGLE COPYRIGHT LINE — ultimul element vizibil -->
+        <div class="footer-copy">
+            © 2026
+            <a href="https://evadari.ro" target="_blank" rel="noopener">Evadari.ro</a>
+            <span class="ampersand">&amp;</span>
+            <a href="https://jobdone.marketing" target="_blank" rel="noopener">Job Done Marketing</a>
+        </div>
 
     </div>
 </footer>
